@@ -11,6 +11,19 @@ class AxisTest(unittest.TestCase):
     def test_axis_instantiation(self):
         self.assertEqual(self.axis.__class__,model.Axis)
 
+    def test_axis_position(self):
+        self.assertEqual(self.axis.position(),0)
+        self.axis.position(5)
+        self.assertEqual(self.axis.position(),5)
+
+    def test_axis_positions(self):
+        self.assertEqual(self.axis.positions(),[])
+        self.assertEqual(self.axis.position(),0)
+        self.axis.position(5)
+        self.assertEqual(self.axis.positions(),[0])
+        self.axis.position(10)
+        self.assertEqual(self.axis.positions(),[0,5])
+
 class BaseTest(unittest.TestCase):
     pass
 
