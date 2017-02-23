@@ -1,5 +1,7 @@
 '''Axis alignment with clocks'''
 
+PRIMARY_AXIS = 'x'
+
 class Axis(object):
     def __init__(self):
         self._position = 0
@@ -22,7 +24,7 @@ class Plan(object):
             self.x = Axis()
             self.y = Axis()
 
-    def axis(self,key_name='x'):
+    def axis(self,key_name=PRIMARY_AXIS):
         return self.__getattribute__(key_name)
 
 class Clock(object):
