@@ -26,14 +26,14 @@ class AxisTest(unittest.TestCase):
 
 class PlanTest(unittest.TestCase):
     def setUp(self):
-        #self.x = model.Axis()
-        #self.y = model.Axis()
         self.plan = model.Plan()
 
     def test_plan_instantiation(self):
         self.assertEqual(self.plan.__class__,model.Plan)
-        self.assertEqual(self.plan.x.__class__,model.Axis)
-        self.assertEqual(self.plan.y.__class__,model.Axis)
+
+    def test_plan_axis_retrievement(self):
+        self.assertEqual(self.plan.axis().__class__,model.Axis)
+        self.assertEqual(self.plan.axis('y').__class__,model.Axis)
 
 class ClockTest(unittest.TestCase):
     pass

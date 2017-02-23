@@ -22,5 +22,8 @@ class Plan(object):
             self.x = Axis()
             self.y = Axis()
 
+    def axis(self,key_name='x'):
+        return self.__getattribute__(key_name)
+
 class Clock(object):
     pass
