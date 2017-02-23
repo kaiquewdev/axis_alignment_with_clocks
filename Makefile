@@ -1,1 +1,2 @@
-test: python model_test.py
+test:
+	python model_test.py

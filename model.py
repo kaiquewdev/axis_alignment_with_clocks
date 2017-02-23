@@ -14,8 +14,13 @@ class Axis(object):
     def positions(self):
         return self._positions
 
-class Base(object):
-    pass
+class Plan(object):
+    def __init__(self,*args,**kwargs):
+        for (k,v) in kwargs.items():
+            self[k] = v
+        else:
+            self.x = Axis()
+            self.y = Axis()
 
 class Clock(object):
     pass
