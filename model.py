@@ -32,5 +32,5 @@ class Plan(object):
     def axis_count(self):
         return len(self._axis.items())
 
-class Clock(object):
+class Clock(Plan):
     pass

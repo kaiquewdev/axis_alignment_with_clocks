@@ -92,8 +92,19 @@ class PlanWithThreeAxisTest(unittest.TestCase):
         self.assertEqual(self.plan.axis('y').__class__,model.Axis)
         self.assertEqual(self.plan.axis('z').__class__,model.Axis)
 
-#class ClockTest(unittest.TestCase):
-#    pass
+    def test_plan_axis_count(self):
+        self.assertEqual(self.plan.axis_count(),3)
+
+class ClockTest(unittest.TestCase):
+    def setUp(self):
+        self.clock = model.Clock()
+
+    def test_clock_instantiation(self):
+        self.assertEqual(self.clock.__class__,model.Clock)
+
+    def test_clock_axis(self):
+        self.assertEqual(self.clock.axis('x').__class__,model.Axis)
+        self.assertEqual(self.clock.axis('y').__class__,model.Axis)
 
 if __name__ == '__main__' and 'DEBUG' in os.environ and os.environ['DEBUG'] == 'true':
     unittest.main(verbosity=2)
