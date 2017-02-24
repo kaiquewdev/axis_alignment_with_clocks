@@ -109,6 +109,35 @@ class ClockTest(unittest.TestCase):
     def test_clock_axis_count(self):
         self.assertEqual(self.clock.axis_count(),2)
 
+class HorizontalVisionTest(unittest.TestCase):
+    def setUp(self):
+        self.horizontal_vision = model.HorizontalVision()
+
+    def test_horizontal_vision_instantiation(self):
+        self.assertEqual(self.horizontal_vision.__class__,model.HorizontalVision)
+
+    def test_horizontal_axis(self):
+        self.assertEqual(self.horizontal_vision.axis('x').__class__,model.Axis)
+        self.assertEqual(self.horizontal_vision.axis('y').__class__,model.Axis)
+
+    def test_horizontal_axis_count(self):
+        self.assertEqual(self.horizontal_vision.axis_count(),2)
+
+class VerticalVisionTest(unittest.TestCase):
+    def setUp(self):
+        self.vertical_vision = model.VerticalVision()
+
+    def test_vertical_vision_instantiation(self):
+        self.assertEqual(self.vertical_vision.__class__,model.VerticalVision)
+
+    def test_vertical_axis(self):
+        self.assertEqual(self.vertical_vision.axis('x').__class__,model.Axis)
+        self.assertEqual(self.vertical_vision.axis('y').__class__,model.Axis)
+
+    def test_vertical_axis_count(self):
+        self.assertEqual(self.vertical_vision.axis_count(),2)
+        
+
 if __name__ == '__main__' and 'DEBUG' in os.environ and os.environ['DEBUG'] == 'true':
     unittest.main(verbosity=2)
 elif __name__ == '__main__':

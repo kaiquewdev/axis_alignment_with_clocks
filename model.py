@@ -34,3 +34,9 @@ class Plan(object):
 
 class Clock(Plan):
     pass
+
+class HorizontalVision(Plan):
+    pass
+
+class VerticalVision(Plan):
+    pass
