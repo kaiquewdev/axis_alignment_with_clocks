@@ -3,14 +3,15 @@
 PRIMARY_AXIS = 'x'
 
 class Axis(object):
-    def __init__(self):
-        self._position = 0
+    def __init__(self,position=0):
+        self._position = position
         self._positions = []
 
     def position(self,v=0):
         if v:
             self._positions.append(self.position())
             self._position = v
+            return self
         return self._position
 
     def positions(self):
@@ -20,7 +21,7 @@ class Plan(object):
     def __init__(self,*args,**kwargs):
         self._axis = {}
         for (k,v) in kwargs.items():
-            self._axis['axis_%s' % (k)] = v
+            self._axis['axis_%s' % (k)] = Axis(v)
         else:
             self._axis['axis_x'] = Axis()
             self._axis['axis_y'] = Axis()
