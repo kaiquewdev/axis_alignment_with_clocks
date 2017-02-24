@@ -106,6 +106,9 @@ class ClockTest(unittest.TestCase):
         self.assertEqual(self.clock.axis('x').__class__,model.Axis)
         self.assertEqual(self.clock.axis('y').__class__,model.Axis)
 
+    def test_clock_axis_count(self):
+        self.assertEqual(self.clock.axis_count(),2)
+
 if __name__ == '__main__' and 'DEBUG' in os.environ and os.environ['DEBUG'] == 'true':
     unittest.main(verbosity=2)
 elif __name__ == '__main__':
