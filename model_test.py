@@ -60,6 +60,12 @@ class AxisWithPositionAsArgumentTest(unittest.TestCase):
         self.assertEqual(self.axis_y.position(),15)
         self.assertEqual(self.axis_y.positions(),[10])
 
+    def test_axis_z_position(self):
+        self.assertEqual(self.axis_z.positions(),[])
+        self.axis_z.position(20)
+        self.assertEqual(self.axis_z.position(),20)
+        self.assertEqual(self.axis_z.positions(),[15])
+
 class DefaultPlanWithTwoAxisTest(unittest.TestCase):
     def setUp(self):
         self.plan = model.Plan()
