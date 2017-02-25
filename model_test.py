@@ -136,7 +136,6 @@ class VerticalVisionTest(unittest.TestCase):
 
     def test_vertical_axis_count(self):
         self.assertEqual(self.vertical_vision.axis_count(),2)
-        
 
 if __name__ == '__main__' and 'DEBUG' in os.environ and os.environ['DEBUG'] == 'true':
     unittest.main(verbosity=2)
