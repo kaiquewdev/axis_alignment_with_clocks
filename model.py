@@ -35,6 +35,9 @@ class Plan(object):
 class Clock(Plan):
     pass
 
+class Feet(Plan):
+    pass
+
 class HorizontalVision(Plan):
     pass
 

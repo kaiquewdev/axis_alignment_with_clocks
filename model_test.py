@@ -73,8 +73,10 @@ class DefaultPlanWithTwoAxisTest(unittest.TestCase):
     def test_plan_instantiation(self):
         self.assertEqual(self.plan.__class__,model.Plan)
 
-    def test_plan_axis_retrievement(self):
+    def test_plan_axis_x(self):
         self.assertEqual(self.plan.axis('x').__class__,model.Axis)
+
+    def test_plan_axis_y(self):
         self.assertEqual(self.plan.axis('y').__class__,model.Axis)
 
     def test_plan_axis_count(self):
@@ -87,9 +89,13 @@ class PlanWithThreeAxisTest(unittest.TestCase):
     def test_plan_instantiation(self):
         self.assertEqual(self.plan.__class__,model.Plan)
 
-    def test_plan_axis_retrievement(self):
+    def test_plan_axis_x(self):
         self.assertEqual(self.plan.axis('x').__class__,model.Axis)
+
+    def test_plan_axis_y(self):
         self.assertEqual(self.plan.axis('y').__class__,model.Axis)
+
+    def test_plan_axis_z(self):
         self.assertEqual(self.plan.axis('z').__class__,model.Axis)
 
     def test_plan_axis_count(self):
@@ -102,12 +108,30 @@ class ClockTest(unittest.TestCase):
     def test_clock_instantiation(self):
         self.assertEqual(self.clock.__class__,model.Clock)
 
-    def test_clock_axis(self):
+    def test_clock_axis_x(self):
         self.assertEqual(self.clock.axis('x').__class__,model.Axis)
+
+    def test_clock_axis_y(self):
         self.assertEqual(self.clock.axis('y').__class__,model.Axis)
 
     def test_clock_axis_count(self):
         self.assertEqual(self.clock.axis_count(),2)
+
+class FeetTest(unittest.TestCase):
+    def setUp(self):
+        self.feet = model.Feet()
+
+    def test_feet_instantiation(self):
+        self.assertEqual(self.feet.__class__,model.Feet)
+
+    def test_feet_axis_x(self):
+        self.assertEqual(self.feet.axis('x').__class__,model.Axis)
+
+    def test_feet_axis_y(self):
+        self.assertEqual(self.feet.axis('y').__class__,model.Axis)
+
+    def test_feet_axis_count(self):
+        self.assertEqual(self.feet.axis_count(),2)
 
 class HorizontalVisionTest(unittest.TestCase):
     def setUp(self):
@@ -116,8 +140,10 @@ class HorizontalVisionTest(unittest.TestCase):
     def test_horizontal_vision_instantiation(self):
         self.assertEqual(self.horizontal_vision.__class__,model.HorizontalVision)
 
-    def test_horizontal_axis(self):
+    def test_horizontal_axis_x(self):
         self.assertEqual(self.horizontal_vision.axis('x').__class__,model.Axis)
+
+    def test_horizontal_axis_y(self):
         self.assertEqual(self.horizontal_vision.axis('y').__class__,model.Axis)
 
     def test_horizontal_axis_count(self):
@@ -130,8 +156,10 @@ class VerticalVisionTest(unittest.TestCase):
     def test_vertical_vision_instantiation(self):
         self.assertEqual(self.vertical_vision.__class__,model.VerticalVision)
 
-    def test_vertical_axis(self):
+    def test_vertical_axis_x(self):
         self.assertEqual(self.vertical_vision.axis('x').__class__,model.Axis)
+
+    def test_vertical_axis_y(self):
         self.assertEqual(self.vertical_vision.axis('y').__class__,model.Axis)
 
     def test_vertical_axis_count(self):
