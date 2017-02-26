@@ -4,6 +4,8 @@ from sanic import Sanic
 from sanic.response import json
 
 from model import Plan
+from model import Feet
+from model import Clock
 from model import HorizontalVision
 from model import VerticalVision
 
@@ -19,10 +21,15 @@ async def plan(request):
     return json({'x':plan.axis('x').position(),'y':plan.axis('y').position(),'axis':plan.axis_count()})
 
 @app.route('/alignment')
-async def horizontal_vision(request):
+async def alignment(request):
     hv = HorizontalVision()
     vv = VerticalVision()
     return json({'x':[hv.axis('x').position(),vv.axis('x').position()],'y':[hv.axis('x').position(),vv.axis('y').position()],'axis':hv.axis_count()+vv.axis_count()})
+
+@app.route('/clock')
+async def clock(request):
+    clock = Clock()
+    return json({'x':clock.axis('x').position(),'y':clock.axis('y').position(),'axis':clock.axis_count()})
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0',port=8000)

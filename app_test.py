@@ -19,6 +19,10 @@ class AppTest(unittest.TestCase):
         alignment = requests.get('http://0.0.0.0:8000/alignment')
         self.assertEqual(alignment.json(),{'axis':4,'x':[0,0],'y':[0,0]})
 
+    def test_get_app_alignment_clock_route(self):
+        clock = requests.get('http://0.0.0.0:8000/clock')
+        self.assertEqual(clock.json(),{'axis':2,'x':0,'y':0})
+
 if __name__ == '__main__' and 'DEBUG' in os.environ and os.environ['DEBUG'] == 'true':
     unittest.main(verbosity=2)
 elif __name__ == '__main__':
